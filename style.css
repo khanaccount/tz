@@ -1,0 +1,162 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main {
+  width: 743px;
+  height: 91px;
+  border-radius: 10px;
+  background: #3579f5;
+}
+
+.checkList {
+  padding: 12px 18px 15px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progressBar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  position: relative;
+}
+
+.progressBar > span {
+  position: absolute;
+  color: #f4f8ff;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.label {
+  background-color: #2364db;
+  color: #ffffff;
+  margin-bottom: 4px;
+  padding: 0 13px;
+  border-radius: 40px;
+  width: 50px;
+  height: 18px;
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.status {
+  margin-bottom: 4px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.nextAction {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.openChecklist {
+  cursor: pointer;
+  color: #4777ed;
+  background: #f4f8ff;
+  border: none;
+  margin-left: 68px;
+  width: 170px;
+  height: 40px;
+  border-radius: 6px;
+  padding: 10px 25px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+:root {
+  --progress: 0;
+}
+
+.progressBar[data-progress="0"] .progress {
+  --progress: 0;
+}
+
+.progressBar[data-progress="10"] .progress {
+  --progress: 10;
+}
+
+.progressBar[data-progress="20"] .progress {
+  --progress: 20;
+}
+
+.progressBar[data-progress="30"] .progress {
+  --progress: 30;
+}
+
+.progressBar[data-progress="40"] .progress {
+  --progress: 40;
+}
+
+.progressBar[data-progress="50"] .progress {
+  --progress: 50;
+}
+
+.progressBar[data-progress="60"] .progress {
+  --progress: 60;
+}
+
+.progressBar[data-progress="70"] .progress {
+  --progress: 70;
+}
+
+.progressBar[data-progress="80"] .progress {
+  --progress: 80;
+}
+
+.progressBar[data-progress="90"] .progress {
+  --progress: 90;
+}
+
+.progressBar[data-progress="100"] .progress {
+  --progress: 100;
+}
+
+.progress {
+  stroke: white;
+  stroke-dasharray: 185;
+  stroke-dashoffset: calc(185 - (185 * var(--progress)) / 100);
+  transition: stroke-dashoffset 0.5s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.background {
+  stroke: white;
+  stroke-opacity: 0.5;
+}
